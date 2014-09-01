@@ -1,0 +1,25 @@
+agentAddress {{ snmpd_agent_address | join(',') }}
+
+createUser {{ snmpd_internal_user.username }} {{ snmpd_internal_user.auth_protocol }} "{{ snmpd_internal_user.password }}"
+{% for snmpd_user in snmpd_users %}
+createUser {{ snmpd_user.username }} {{ snmpd_user.auth_protocol }} "{{ snmpd_user.password }}" {{ snmpd_user.privacy_protocol }} "{{ snmpd_user.privacy_passphrase }}"
+{% endfor %}
+
+view systemonly included .1.3.6.1.2.1.1
+view systemonly included .1.3.6.1.2.1.25.1
+
+rouser authOnlyUser
+{% for snmpd_user in snmpd_users %}
+{{ snmpd_user.type }} {{ snmpd_user.username }}
+{% endfor %}
+
+sysLocation {{ snmpd_sys_location }}
+sysContact  {{ snmpd_sys_contact }}
+
+iquerySecName {{ snmpd_internal_user.username }}
+rouser        {{ snmpd_internal_user.username }}
+
+defaultMonitors         {{ 'yes' if snmpd_default_monitors else 'no' }}
+linkUpDownNotifications {{ 'yes' if snmpd_link_up_down_notifications else 'no' }}
+
+master agentx

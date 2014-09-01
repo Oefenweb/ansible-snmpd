@@ -1,0 +1,44 @@
+---
+# tasks file for snmpd
+- name: install dependencies
+  apt:
+    name: "{{ item }}"
+    state: latest
+  with_items: snmpd_dependencies
+  when: snmpd_dependencies
+  tags: [configuration, snmpd, snmpd-dependencies]
+
+- name: install
+  apt:
+    name: "{{ item }}"
+    state: latest
+  with_items: snmpd_install
+  when: snmpd_install
+  tags: [configuration, snmpd, snmpd-install]
+
+- name: update configuration file - /etc/default/snmpd.conf
+  template:
+    src: etc/default/snmpd.j2
+    dest: /etc/default/snmpd
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart snmpd
+  tags: [configuration, snmpd, snmpd-configuration]
+
+- name: update configuration file - /etc/snmp/snmpd.conf
+  template:
+    src: etc/snmp/snmpd.conf.j2
+    dest: /etc/snmp/snmpd.conf
+    owner: root
+    group: root
+    mode: 0600
+  notify: restart snmpd
+  tags: [configuration, snmpd, snmpd-configuration]
+
+- name: start and enable service
+  service:
+    name: snmpd
+    state: started
+    enabled: yes
+  tags: [configuration, snmpd, snmpd-start-enable-service]

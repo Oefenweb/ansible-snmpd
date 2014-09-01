@@ -1,0 +1,33 @@
+---
+# defaults file for snmpd
+snmpd_install:
+  - lm-sensors
+snmpd_mibs: UCD-SNMP-MIB
+snmpd_run: true
+snmpd_opts: '-LS4d -Lf /dev/null -u snmp -g snmp -I -smux -p /var/run/snmpd.pid'
+snmpd_trapd_run: false
+snmpd_trapd_opts: '-Lsd -p /var/run/snmptrapd.pid'
+snmpd_snmpd_compat: false
+
+snmpd_agent_address:
+  - 'udp:161'
+  - 'udp6:[::1]:161'
+
+snmpd_internal_user:
+  username: internalUser
+  password: '=9zeba&hEpr3799sE_a!'
+  auth_protocol: MD5
+
+snmpd_users:
+  - username: john-doe
+    password: '!ahab#ub_uk#2uhEThu6'
+    type: rouser
+    auth_protocol: SHA
+    privacy_passphrase: 'zusTAqEpHacEs9eju44@'
+    privacy_protocol: AES
+
+snmpd_sys_location: ''
+snmpd_sys_contact: Root <root@localhost>
+
+snmpd_default_monitors: true
+snmpd_link_up_down_notifications: true
