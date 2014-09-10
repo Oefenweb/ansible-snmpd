@@ -1,3 +1,5 @@
+# {{ ansible_managed }}
+
 agentAddress {{ snmpd_agent_address | join(',') }}
 
 createUser {{ snmpd_internal_user.username }} {{ snmpd_internal_user.auth_protocol }} "{{ snmpd_internal_user.password }}"
