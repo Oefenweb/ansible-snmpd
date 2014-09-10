@@ -26,7 +26,7 @@ snmpd_users:
     privacy_passphrase: 'zusTAqEpHacEs9eju44@'
     privacy_protocol: AES
 
-snmpd_sys_location: ''
+snmpd_sys_location: 'Unknown'
 snmpd_sys_contact: Root <root@localhost>
 
 snmpd_default_monitors: true
