@@ -1,6 +1,9 @@
 ---
-# vars file for snmpd
+
 snmpd_dependencies:
   - snmpd
   - snmp
   - snmp-mibs-downloader
+
+snmpd_install:
+  - lm-sensors
