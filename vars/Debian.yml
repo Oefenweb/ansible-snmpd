@@ -1,0 +1,8 @@
+---
+
+snmpd_dependencies:
+  - snmpd
+  - snmp
+
+snmpd_install:
+  - lm-sensors

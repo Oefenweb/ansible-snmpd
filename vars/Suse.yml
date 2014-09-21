@@ -1,0 +1,7 @@
+---
+
+snmpd_dependencies:
+  - net-snmp
+
+snmpd_install:
+  - sensors

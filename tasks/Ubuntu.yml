@@ -1,0 +1,21 @@
+---
+# tasks file for snmpd installation at Ubuntu
+- name: "Ubuntu | set_fact snmpd_supported_os: True"
+  set_fact:
+    snmpd_supported_os: True
+
+- name: Ubuntu | install dependencies
+  apt:
+    name: "{{ item }}"
+    state: latest
+  with_items: snmpd_dependencies
+  when: snmpd_dependencies
+  tags: [configuration, snmpd, snmpd-dependencies]
+
+- name: Ubuntu | install
+  apt:
+    name: "{{ item }}"
+    state: latest
+  with_items: snmpd_install
+  when: snmpd_install
+  tags: [configuration, snmpd, snmpd-install]

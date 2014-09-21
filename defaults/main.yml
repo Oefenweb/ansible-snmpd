@@ -1,7 +1,5 @@
 ---
 # defaults file for snmpd
-snmpd_install:
-  - lm-sensors
 snmpd_mibs: UCD-SNMP-MIB
 snmpd_run: true
 snmpd_opts: '-LS4d -Lf /dev/null -u snmp -g snmp -I -smux -p /var/run/snmpd.pid'

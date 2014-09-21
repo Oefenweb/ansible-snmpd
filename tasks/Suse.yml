@@ -1,0 +1,19 @@
+---
+# tasks file for snmpd installation at Suse
+- name: "Suse | set_fact snmpd_supported_os: True"
+  set_fact:
+    snmpd_supported_os: True
+
+- name: Suse | install dependencies
+  zypper:
+    name: "{{ item }}"
+    state: latest
+  with_items: snmpd_dependencies
+  tags: [configuration, snmpd, snmpd-dependencies]
+
+- name: Suse | install
+  zypper:
+    name: "{{ item }}"
+    state: latest
+  with_items: snmpd_install
+  tags: [configuration, snmpd, snmpd-install]
