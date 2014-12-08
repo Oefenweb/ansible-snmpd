@@ -1,7 +1,7 @@
 ---
-# test file for postfix
+# test file for snmpd
 - hosts: all
   remote_user: vagrant
   sudo: true
   roles:
-    - postfix
+    - snmpd
