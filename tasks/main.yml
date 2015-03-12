@@ -4,6 +4,7 @@
   apt:
     name: "{{ item }}"
     state: latest
+    update_cache: true
   with_items: snmpd_dependencies
   when: snmpd_dependencies
   tags: [configuration, snmpd, snmpd-dependencies]
