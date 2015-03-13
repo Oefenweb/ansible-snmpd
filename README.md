@@ -6,7 +6,9 @@ Set up snmp(d) in Debian-like systems.
 
 #### Requirements
 
-None
+
+On **Debian** the **non-free** repository must be enabled to download the `snmp-mibs-downloader` package, 
+on **Ubuntu** this package is in **multiverse**. See the *"Recommended"* section below.
 
 #### Variables
 
@@ -32,6 +34,11 @@ None
 ## Dependencies
 
 None
+
+## Recommended
+
+* `ansible-apt` ([see](https://github.com/Oefenweb/ansible-apt), to manage `apt` repositories (in `/etc/apt/sources.list`)
+
 
 #### Example
 
