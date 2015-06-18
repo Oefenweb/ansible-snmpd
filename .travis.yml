@@ -38,6 +38,12 @@ env:
   - ANSIBLE_VERSION=1.4.1
   - ANSIBLE_VERSION=1.4
 
+matrix:
+  allow_failures:
+    - env:
+      # See https://github.com/ansible/ansible/issues/6385
+      - ANSIBLE_VERSION=1.5.1
+
 before_install:
   - sudo apt-get update -qq
 
