@@ -44,6 +44,10 @@ matrix:
       # See https://github.com/ansible/ansible/issues/6385
       - ANSIBLE_VERSION=1.5.1
 
+branches:
+  only:
+    - master
+
 before_install:
   - sudo apt-get update -qq
 
