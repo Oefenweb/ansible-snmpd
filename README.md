@@ -7,7 +7,7 @@ Set up snmp(d) in Debian-like systems.
 #### Requirements
 
 
-On **Debian** the **non-free** repository must be enabled to download the `snmp-mibs-downloader` package, 
+On **Debian** the **non-free** repository must be enabled to download the `snmp-mibs-downloader` package,
 on **Ubuntu** this package is in **multiverse**. See the *"Recommended"* section below.
 
 #### Variables
@@ -27,6 +27,10 @@ on **Ubuntu** this package is in **multiverse**. See the *"Recommended"* section
 * `snmpd_users`: [default: see defaults.yml]: Additional users. **Make sure to change!**
 * `snmpd_sys_location` [default: `''`]: System location
 * `snmpd_sys_contact` [default: `Root <root@localhost>`]: System contact
+
+* `snmpd_disks_include_all`: [default: `fase`]: Include all disks mounted on the system in the SNMP table
+* `snmpd_disks_include_all_threshold`: [default: `'10%'`]: Minimum free space specified either in kB or as a percentage
+* `snmpd_disks`: [default: `['/ 10%', ]`]: List of disks to be included in the SNMP table and their corresponding thresholds
 
 * `snmpd_default_monitors` [default: `true`]:
 * `snmpd_link_up_down_notifications` [default: `true`]:

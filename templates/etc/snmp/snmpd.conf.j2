@@ -21,6 +21,13 @@ sysContact  {{ snmpd_sys_contact }}
 iquerySecName {{ snmpd_internal_user.username }}
 rouser        {{ snmpd_internal_user.username }}
 
+{% if snmpd_disks_include_all %}
+includeAllDisks {{ snmpd_disks_include_all_threshold }}
+{% endif %}
+{% for snmpd_disk in snmpd_disks %}
+disk {{ snmpd_disk }}
+{% endfor %}
+
 defaultMonitors         {{ 'yes' if snmpd_default_monitors else 'no' }}
 linkUpDownNotifications {{ 'yes' if snmpd_link_up_down_notifications else 'no' }}
 

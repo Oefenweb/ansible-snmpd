@@ -29,5 +29,10 @@ snmpd_users:
 snmpd_sys_location: 'Unknown'
 snmpd_sys_contact: Root <root@localhost>
 
+snmpd_disks_include_all: false
+snmpd_disks_include_all_threshold: '10%'
+snmpd_disks:
+  - '/ 10%'
+
 snmpd_default_monitors: true
 snmpd_link_up_down_notifications: true
