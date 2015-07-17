@@ -51,7 +51,7 @@ None
 ---
 - hosts: all
   roles:
-  - snmpd
+    - snmpd
 ```
 
 #### License

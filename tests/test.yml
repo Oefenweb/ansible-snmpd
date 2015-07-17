@@ -1,3 +1,4 @@
+# tests file for snmpd
 ---
 - hosts: localhost
   remote_user: root

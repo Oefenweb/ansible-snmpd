@@ -1,5 +1,5 @@
----
 # tasks file for snmpd
+---
 - name: install dependencies
   apt:
     name: "{{ item }}"

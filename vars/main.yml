@@ -1,5 +1,5 @@
----
 # vars file for snmpd
+---
 snmpd_dependencies:
   - snmpd
   - snmp

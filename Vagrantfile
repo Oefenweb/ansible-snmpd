@@ -13,7 +13,7 @@ boxes = [
     :ip => '10.0.0.10',
     :cpu => "50",
     :ram => "256"
-   },
+  },
   {
     :name => "ubuntu-1204",
     :box => "opscode-ubuntu-12.04",
@@ -43,6 +43,14 @@ boxes = [
     :box => "opscode-debian-7.8",
     :url => "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_debian-7.8_chef-provisionerless.box",
     :ip => '10.0.0.14',
+    :cpu => "50",
+    :ram => "256"
+  },
+  {
+    :name => "debian-81",
+    :box => "opscode-debian-8.1",
+    :url => "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_debian-8.1_chef-provisionerless.box",
+    :ip => '10.0.0.15',
     :cpu => "50",
     :ram => "256"
   },

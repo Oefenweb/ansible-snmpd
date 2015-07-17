@@ -1,5 +1,5 @@
----
 # defaults file for snmpd
+---
 snmpd_install:
   - lm-sensors
 snmpd_mibs: UCD-SNMP-MIB

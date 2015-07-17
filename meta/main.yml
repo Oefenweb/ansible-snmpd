@@ -1,5 +1,5 @@
----
 # meta file for snmpd
+---
 galaxy_info:
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
@@ -7,12 +7,16 @@ galaxy_info:
   license: MIT
   min_ansible_version: 1.4
   platforms:
-  - name: Ubuntu
-    versions:
-    - all
-  - name: Debian
-    versions:
-    - all
+    - name: Ubuntu
+      versions:
+        - lucid
+        - precise
+        - trusty
+    - name: Debian
+      versions:
+        - squeeze
+        - wheezy
+        - jessie
   categories:
-  - system
+    - system
 dependencies: []
