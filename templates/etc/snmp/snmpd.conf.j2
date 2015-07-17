@@ -22,10 +22,10 @@ iquerySecName {{ snmpd_internal_user.username }}
 rouser        {{ snmpd_internal_user.username }}
 
 {% if snmpd_disks_include_all %}
-includeAllDisks {{ snmpd_disks_include_all_threshold }}
+includeAllDisks {{ snmpd_disks_include_all_threshold_minpercent }}
 {% endif %}
 {% for snmpd_disk in snmpd_disks %}
-disk {{ snmpd_disk }}
+disk {{ snmpd_disk.path }} {{ snmpd_disk.threshold }}
 {% endfor %}
 
 defaultMonitors         {{ 'yes' if snmpd_default_monitors else 'no' }}

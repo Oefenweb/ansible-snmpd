@@ -28,9 +28,11 @@ on **Ubuntu** this package is in **multiverse**. See the *"Recommended"* section
 * `snmpd_sys_location` [default: `''`]: System location
 * `snmpd_sys_contact` [default: `Root <root@localhost>`]: System contact
 
-* `snmpd_disks_include_all`: [default: `fase`]: Include all disks mounted on the system in the SNMP table
-* `snmpd_disks_include_all_threshold`: [default: `'10%'`]: Minimum free space specified either in kB or as a percentage
-* `snmpd_disks`: [default: `['/ 10%', ]`]: List of disks to be included in the SNMP table and their corresponding thresholds
+* `snmpd_disks_include_all`: [default: `false`]: Include all disks mounted on the system in the SNMP table
+* `snmpd_disks_include_all_threshold_minpercent`: [default: `10%`]: Minimum free space specified as a percentage
+* `snmpd_disks`: [default: `[]`]: List of disk paths and their corresponding thresholds to be included in the SNMP table
+* `snmpd_disks.path`: [required]: The disks mountpoint (e.g. `/`)
+* `snmpd_disks.threshold`: [required]: The disks minimum threshold either be specified in kB (MINSPACE) or as a percentage of the total disk (MINPERCENT% with a '%' character) (e.g. `10%`)
 
 * `snmpd_default_monitors` [default: `true`]:
 * `snmpd_link_up_down_notifications` [default: `true`]:
@@ -42,7 +44,6 @@ None
 ## Recommended
 
 * `ansible-apt` ([see](https://github.com/Oefenweb/ansible-apt), to manage `apt` repositories (in `/etc/apt/sources.list`)
-
 
 #### Example
 
