@@ -7,7 +7,6 @@
     update_cache: true
     cache_valid_time: 3600
   with_items: snmpd_dependencies
-  when: snmpd_dependencies
   tags: [configuration, snmpd, snmpd-dependencies]
 
 - name: install
@@ -15,7 +14,6 @@
     name: "{{ item }}"
     state: latest
   with_items: snmpd_install
-  when: snmpd_install
   tags: [configuration, snmpd, snmpd-install]
 
 - name: update configuration file - /etc/default/snmpd.conf
@@ -42,5 +40,5 @@
   service:
     name: snmpd
     state: started
-    enabled: yes
+    enabled: true
   tags: [configuration, snmpd, snmpd-start-enable-service]
