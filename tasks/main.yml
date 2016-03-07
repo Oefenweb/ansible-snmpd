@@ -6,14 +6,14 @@
     state: latest
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
-  with_items: snmpd_dependencies
+  with_items: "{{ snmpd_dependencies }}"
   tags: [configuration, snmpd, snmpd-dependencies]
 
 - name: install
   apt:
     name: "{{ item }}"
     state: latest
-  with_items: snmpd_install
+  with_items: "{{ snmpd_install }}"
   tags: [configuration, snmpd, snmpd-install]
 
 - name: update configuration file - /etc/default/snmpd.conf
