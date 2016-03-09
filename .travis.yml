@@ -2,6 +2,9 @@
 language: python
 python: "2.7"
 
+sudo: required
+dist: trusty
+
 env:
   - ANSIBLE_VERSION=latest
   - ANSIBLE_VERSION=2.0.1.0
@@ -55,6 +58,8 @@ branches:
     - master
 
 before_install:
+  - lsb_release -a
+
   - sudo apt-get update -qq
 
     # Remove snmp(d)
