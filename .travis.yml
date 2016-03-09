@@ -58,8 +58,7 @@ branches:
     - master
 
 before_install:
-  - lsb_release -a
-
+  - sudo apt-add-repository multiverse
   - sudo apt-get update -qq
 
     # Remove snmp(d)
