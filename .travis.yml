@@ -45,7 +45,7 @@ before_install:
   - sudo apt-get update -qq
 
     # Remove snmp(d)
-  - sudo apt-get remove --purge snmpd snmp snmp-mibs-downloader
+  - sudo apt-get remove --purge --yes snmpd snmp snmp-mibs-downloader
 
 install:
   # Install Ansible.
