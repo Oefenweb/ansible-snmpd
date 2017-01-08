@@ -3,18 +3,24 @@
 - name: install dependencies
   apt:
     name: "{{ item }}"
-    state: latest
+    state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
   with_items: "{{ snmpd_dependencies }}"
-  tags: [configuration, snmpd, snmpd-dependencies]
+  tags:
+    - configuration
+    - snmpd
+    - snmpd-dependencies
 
 - name: install
   apt:
     name: "{{ item }}"
-    state: latest
+    state: "{{ apt_install_state | default('latest') }}"
   with_items: "{{ snmpd_install }}"
-  tags: [configuration, snmpd, snmpd-install]
+  tags:
+    - configuration
+    - snmpd
+    - snmpd-install
 
 - name: update configuration file - /etc/default/snmpd.conf
   template:
@@ -24,7 +30,10 @@
     group: root
     mode: 0644
   notify: restart snmpd
-  tags: [configuration, snmpd, snmpd-configuration]
+  tags:
+    - configuration
+    - snmpd
+    - snmpd-configuration
 
 - name: update configuration file - /etc/snmp/snmpd.conf
   template:
@@ -34,11 +43,17 @@
     group: root
     mode: 0600
   notify: restart snmpd
-  tags: [configuration, snmpd, snmpd-configuration]
+  tags:
+    - configuration
+    - snmpd
+    - snmpd-configuration
 
 - name: start and enable service
   service:
     name: snmpd
     state: started
     enabled: true
-  tags: [configuration, snmpd, snmpd-start-enable-service]
+  tags:
+    - configuration
+    - snmpd
+    - snmpd-start-enable-service
