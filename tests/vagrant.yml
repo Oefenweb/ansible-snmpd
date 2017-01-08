@@ -5,7 +5,3 @@
   sudo: true
   roles:
     - ../../
-  vars:
-    snmpd_agent_address:
-      - 'udp:127.0.0.1:10161'
-      - 'udp6:[::1]:10161'
