@@ -1,6 +1,6 @@
 ## snmpd
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-snmpd.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-snmpd) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-snmpd-blue.svg)](https://galaxy.ansible.com/tersmitten/snmpd)
+[![Build Status](https://travis-ci.org/Oefenweb/ansible-snmpd.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-snmpd) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-snmpd-blue.svg)](https://galaxy.ansible.com/Oefenweb/snmpd)
 
 Set up snmp(d) in Debian-like systems.
 
@@ -27,7 +27,7 @@ on **Ubuntu** this package is in **multiverse**. See the *"Recommended"* section
 * `snmpd_users`: [default: see defaults.yml]: Additional users. **Make sure to change!**
 * `snmpd_sys_location` [default: `''`]: System location
 * `snmpd_sys_contact` [default: `Root <root@localhost>`]: System contact
-* `snmpd_sys_description` [default: `{{ ansible_nodename }}`]: System description
+* `snmpd_sys_description` [default: `{{ inventory_hostname }}`]: System description
 
 * `snmpd_disks_include_all`: [default: `false`]: Include all disks mounted on the system in the SNMP table
 * `snmpd_disks_include_all_threshold_minpercent`: [default: `10%`]: Minimum free space specified as a percentage

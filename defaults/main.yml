@@ -28,7 +28,7 @@ snmpd_users:
 
 snmpd_sys_location: 'Unknown'
 snmpd_sys_contact: Root <root@localhost>
-snmpd_sys_description: "{{ ansible_nodename }}"
+snmpd_sys_description: "{{ inventory_hostname }}"
 
 snmpd_disks_include_all: false
 snmpd_disks_include_all_threshold: '10%'
