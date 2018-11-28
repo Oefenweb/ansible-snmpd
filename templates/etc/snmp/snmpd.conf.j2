@@ -31,5 +31,11 @@ disk {{ snmpd_disk.path }} {{ snmpd_disk.threshold }}
 
 defaultMonitors         {{ 'yes' if snmpd_default_monitors else 'no' }}
 linkUpDownNotifications {{ 'yes' if snmpd_link_up_down_notifications else 'no' }}
+{% if snmpd_extensions is defined %}
+
+{% for snmpd_extension in snmpd_extensions %}
+extend {{ snmpd_extension.name }} {{ snmpd_extension.command }}
+{% endfor %}
+{% endif %}
 
 master agentx
