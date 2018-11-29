@@ -1,6 +1,7 @@
 # meta file for snmpd
 ---
 galaxy_info:
+  role_name: snmpd
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
   description: Set up snmp(d) in Debian-like systems
@@ -12,10 +13,12 @@ galaxy_info:
         - precise
         - trusty
         - xenial
+        - bionic
     - name: Debian
       versions:
         - wheezy
         - jessie
+        - stretch
   galaxy_tags:
     - system
 dependencies: []

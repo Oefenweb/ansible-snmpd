@@ -8,7 +8,7 @@ thisFile="$(readlink -f ${0})";
 thisFilePath="$(dirname ${thisFile})";
 
 # Only provision once
-if [ -f /provisioned ]; then
+if [[ -f /provisioned ]]; then
   exit 0;
 fi
 

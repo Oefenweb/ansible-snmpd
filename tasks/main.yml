@@ -13,9 +13,8 @@
 
 - name: install
   apt:
-    name: "{{ item }}"
+    name: "{{ snmpd_install }}"
     state: "{{ apt_install_state | default('latest') }}"
-  with_items: "{{ snmpd_install }}"
   tags:
     - configuration
     - snmpd

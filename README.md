@@ -32,12 +32,16 @@ on **Ubuntu** this package is in **multiverse**. See the *"Recommended"* section
 * `snmpd_disks_include_all`: [default: `false`]: Include all disks mounted on the system in the SNMP table
 * `snmpd_disks_include_all_threshold_minpercent`: [default: `10%`]: Minimum free space specified as a percentage
 * `snmpd_disks`: [default: `[]`]: List of disk paths and their corresponding thresholds to be included in the SNMP table
-* `snmpd_disks.path`: [required]: The disks mountpoint (e.g. `/`)
-* `snmpd_disks.threshold`: [required]: The disks minimum threshold either be specified in kB (MINSPACE) or as a percentage of the total disk (MINPERCENT% with a '%' character) (e.g. `10%`)
+* `snmpd_disks.{n}.path`: [required]: The disks mountpoint (e.g. `/`)
+* `snmpd_disks.{n}.threshold`: [required]: The disks minimum threshold either be specified in kB (MINSPACE) or as a percentage of the total disk (MINPERCENT% with a '%' character) (e.g. `10%`)
 
-* `snmpd_default_monitors` [default: `true`]:
-* `snmpd_link_up_down_notifications` [default: `true`]:
-* `snmpd_extensions`: [default: `[]`]: List of extension names and commands
+* `snmpd_default_monitors` [default: `true`]: Configure the Event `MIB` tables to monitor the various `UCD-SNMP-MIB` tables for problems
+* `snmpd_link_up_down_notifications` [default: `true`]: Configure the Event `MIB` tables to monitor the `fTable` for network interfaces being taken up or down, and triggering a `linkUp` or `linkDown` notification as appropriate
+
+* `snmpd_extensions`: [default: `[]`]: Extension MIB declaration(s)
+* `snmpd_extensions.{n}.name`: [required]: An identifying string for the extension
+* `snmpd_extensions.{n}.prog`: [required]: The program to run
+* `snmpd_extensions.{n}.args`: [default: `[]`]: The arguments to give the program
 
 ## Dependencies
 
