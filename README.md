@@ -37,6 +37,7 @@ on **Ubuntu** this package is in **multiverse**. See the *"Recommended"* section
 
 * `snmpd_default_monitors` [default: `true`]:
 * `snmpd_link_up_down_notifications` [default: `true`]:
+* `snmpd_extensions`: [default: `[]`]: List of extension names and commands
 
 ## Dependencies
 
