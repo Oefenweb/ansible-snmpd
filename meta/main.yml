@@ -14,11 +14,13 @@ galaxy_info:
         - trusty
         - xenial
         - bionic
+        - focal
     - name: Debian
       versions:
         - wheezy
         - jessie
         - stretch
+        - buster
   galaxy_tags:
     - system
 dependencies: []

@@ -1,6 +1,7 @@
 ## snmpd
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-snmpd.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-snmpd) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-snmpd-blue.svg)](https://galaxy.ansible.com/Oefenweb/snmpd)
+[![Build Status](https://travis-ci.org/Oefenweb/ansible-snmpd.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-snmpd)
+[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-snmpd-blue.svg)](https://galaxy.ansible.com/Oefenweb/snmpd)
 
 Set up snmp(d) in Debian-like systems.
 
