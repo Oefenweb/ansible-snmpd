@@ -3,8 +3,10 @@
 - hosts: localhost
   connection: local
   become: true
+  pre_tasks:
+    - name: include vars
+      include_vars: "{{ playbook_dir }}/vars/main.yml"
+    - name: include tasks
+      include: "{{ playbook_dir }}/tasks/pre.yml"
   roles:
     - ../../
-  vars:
-    snmpd_agent_address:
-      - "udp:{{ ansible_lo['ipv4']['address'] }}:10161"
