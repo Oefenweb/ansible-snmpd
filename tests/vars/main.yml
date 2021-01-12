@@ -1,0 +1,4 @@
+# vars file for snmpd
+---
+snmpd_agent_address:
+  - "udp:{{ ansible_lo['ipv4']['address'] }}:10161"

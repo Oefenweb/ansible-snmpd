@@ -3,5 +3,8 @@
 - hosts: all
   remote_user: vagrant
   become: true
+  pre_tasks:
+    - name: include tasks
+      include: "{{ playbook_dir }}/tasks/pre.yml"
   roles:
     - ../../

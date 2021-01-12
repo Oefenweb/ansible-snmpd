@@ -2,16 +2,8 @@
 - name: Prepare
   hosts: all
   become: true
-  tasks:
-    - name: Enable non-free
-      apt_repository:
-        repo: "{{ item.type }} {{ item.url }} {{ item.component }}"
-        filename: non-free
-      with_items:
-        - type: deb
-          url: "http://ftp.nl.debian.org/debian/ {{ ansible_distribution_release }}"
-          component: contrib non-free
-        - type: deb-src
-          url: "http://ftp.nl.debian.org/debian/ {{ ansible_distribution_release }}"
-          component: contrib non-free
-      when: ansible_distribution == 'Debian'
+  pre_tasks:
+    - name: include vars
+      include_vars: "{{ playbook_dir }}/../../tests/vars/main.yml"
+    - name: include tasks
+      include: "{{ playbook_dir }}/../../tests/tasks/pre.yml"
