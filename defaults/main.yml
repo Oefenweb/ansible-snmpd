@@ -1,4 +1,4 @@
-# defaults file for snmpd
+# defaults file
 ---
 snmpd_install:
   - lm-sensors

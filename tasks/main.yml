@@ -1,4 +1,4 @@
-# tasks file for snmpd
+# tasks file
 ---
 - name: install dependencies
   apt:

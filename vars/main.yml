@@ -1,4 +1,4 @@
-# vars file for snmpd
+# vars file
 ---
 snmpd_dependencies:
   - snmpd

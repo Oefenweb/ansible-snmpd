@@ -1,4 +1,4 @@
-# handlers file for snmpd
+# handlers file
 ---
 - name: restart snmpd
   service:

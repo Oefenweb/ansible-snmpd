@@ -1,4 +1,4 @@
-# pre test file for snmpd
+# pre test file
 ---
 - name: enable non-free
   apt_repository:

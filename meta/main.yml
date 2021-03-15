@@ -1,6 +1,7 @@
-# meta file for snmpd
+# meta file
 ---
 galaxy_info:
+  namespace: oefenweb
   role_name: snmpd
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
