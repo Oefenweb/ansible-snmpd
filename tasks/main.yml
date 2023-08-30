@@ -1,7 +1,7 @@
 # tasks file
 ---
 - name: install dependencies
-  apt:
+  ansible.builtin.apt:
     name: "{{ snmpd_dependencies }}"
     state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
@@ -12,7 +12,7 @@
     - snmpd-dependencies
 
 - name: install
-  apt:
+  ansible.builtin.apt:
     name: "{{ snmpd_install }}"
     state: "{{ apt_install_state | default('latest') }}"
   tags:
@@ -21,7 +21,7 @@
     - snmpd-install
 
 - name: update configuration file - /etc/default/snmpd.conf
-  template:
+  ansible.builtin.template:
     src: etc/default/snmpd.j2
     dest: /etc/default/snmpd
     owner: root
@@ -34,7 +34,7 @@
     - snmpd-configuration
 
 - name: update configuration file - /etc/snmp/snmpd.conf
-  template:
+  ansible.builtin.template:
     src: etc/snmp/snmpd.conf.j2
     dest: /etc/snmp/snmpd.conf
     owner: root
@@ -47,7 +47,7 @@
     - snmpd-configuration
 
 - name: start and enable service
-  service:
+  ansible.builtin.service:
     name: snmpd
     state: "{{ service_default_state | default('started') }}"
     enabled: "{{ service_default_enabled | default(true) | bool }}"
