@@ -39,4 +39,8 @@ linkUpDownNotifications {{ 'yes' if snmpd_link_up_down_notifications else 'no' }
 extend {{ snmpd_extension.name }} {{ snmpd_extension.prog }} {{ snmpd_extension.args | default([]) | join(' ') }}
 {% endfor %}
 
+{% for snmpd_pass in snmpd_passes | default([]) %}
+pass {{ snmpd_pass.name }} {{ snmpd_pass.prog }}
+{% endfor %}
+
 master agentx
