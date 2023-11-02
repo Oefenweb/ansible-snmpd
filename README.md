@@ -43,7 +43,7 @@ on **Ubuntu** this package is in **multiverse**. See the *"Recommended"* section
 * `snmpd_extensions.{n}.name`: [required]: An identifying string for the extension
 * `snmpd_extensions.{n}.prog`: [required]: The program to run
 * `snmpd_extensions.{n}.args`: [default: `[]`]: The arguments to give the program
-  
+
 * `snmpd_passes`: [default: `[]`]: Pass MIB declaration(s)
 * `snmpd_passes.{n}.name`: [required]: An identifying string for the extension (OID)
 * `snmpd_passes.{n}.prog`: [required]: The program to run
@@ -62,7 +62,7 @@ None
 ---
 - hosts: all
   roles:
-    - snmpd
+    - oefenweb.snmpd
 ```
 
 #### License
