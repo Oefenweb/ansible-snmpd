@@ -31,6 +31,9 @@ includeAllDisks {{ snmpd_disks_include_all_threshold_minpercent }}
 {% for snmpd_disk in snmpd_disks %}
 disk {{ snmpd_disk.path }} {{ snmpd_disk.threshold }}
 {% endfor %}
+{% if ansible_facts['processor_count'] is defined and ansible_facts['processor_cores'] is defined %}
+load {{ ansible_facts['processor_count'] * ansible_facts['processor_cores'] }}
+{% endif %}
 
 defaultMonitors         {{ 'yes' if snmpd_default_monitors else 'no' }}
 linkUpDownNotifications {{ 'yes' if snmpd_link_up_down_notifications else 'no' }}
