@@ -20,6 +20,20 @@
     - snmpd
     - snmpd-install
 
+- name: stop the snmp service for editing
+  ansible.builtin.service:
+    name: snmpd
+    state: "stopped"
+  tags:
+    - configuration
+    - snmpd
+    - snmpd-start-stop-service
+
+- name: delete the old snmp /var/lib/snmp/snmpd.conf
+  ansible.builtin.file:
+    state: absent
+    path: /var/lib/snmp/snmpd.conf
+
 - name: update configuration file - /etc/default/snmpd.conf
   ansible.builtin.template:
     src: etc/default/snmpd.j2
