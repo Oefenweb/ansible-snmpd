@@ -2,7 +2,7 @@
 - name: Prepare
   hosts: all
   become: true
-  pre_tasks:
+  tasks:
     - name: include vars
       ansible.builtin.include_vars: "{{ playbook_dir }}/../../tests/vars/main.yml"
     - name: include tasks

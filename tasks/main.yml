@@ -26,7 +26,7 @@
     dest: /etc/default/snmpd
     owner: root
     group: root
-    mode: 0644
+    mode: '0644'
   notify: restart snmpd
   tags:
     - configuration
@@ -39,7 +39,7 @@
     dest: /etc/snmp/snmpd.conf
     owner: root
     group: root
-    mode: 0600
+    mode: '0600'
   notify: restart snmpd
   tags:
     - configuration
