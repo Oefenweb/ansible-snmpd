@@ -36,6 +36,8 @@ on **Ubuntu** this package is in **multiverse**. See the *"Recommended"* section
 * `snmpd_disks.{n}.path`: [required]: The disks mountpoint (e.g. `/`)
 * `snmpd_disks.{n}.threshold`: [required]: The disks minimum threshold either be specified in kB (MINSPACE) or as a percentage of the total disk (MINPERCENT% with a '%' character) (e.g. `10%`)
 
+* `snmpd_load` [optional]: Unacceptable `1`, `5` and `15`-minute load averages (e.g. `12 10 5`)
+
 * `snmpd_default_monitors` [default: `true`]: Configure the Event `MIB` tables to monitor the various `UCD-SNMP-MIB` tables for problems
 * `snmpd_link_up_down_notifications` [default: `true`]: Configure the Event `MIB` tables to monitor the `fTable` for network interfaces being taken up or down, and triggering a `linkUp` or `linkDown` notification as appropriate
 

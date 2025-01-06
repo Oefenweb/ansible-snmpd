@@ -1,6 +1,7 @@
 # tests file for snmpd
 ---
-- hosts: localhost
+- name: converge
+  hosts: localhost
   connection: local
   become: true
   pre_tasks:
