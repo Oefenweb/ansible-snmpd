@@ -1,6 +1,6 @@
 # handlers file
 ---
-- name: restart service
+- name: stop service
   ansible.builtin.service:
     name: "{{ snmpd_service_name }}"
     state: stopped
