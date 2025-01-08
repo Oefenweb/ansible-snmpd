@@ -48,7 +48,7 @@
 
 - name: start and enable service
   ansible.builtin.service:
-    name: snmpd
+    name: "{{ snmpd_service_name }}"
     state: "{{ service_default_state | default('started') }}"
     enabled: "{{ service_default_enabled | default(true) | bool }}"
   tags:

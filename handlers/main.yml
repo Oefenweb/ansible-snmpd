@@ -1,7 +1,20 @@
 # handlers file
 ---
-- name: restart snmpd
+- name: stop service
   ansible.builtin.service:
-    name: snmpd
+    name: "{{ snmpd_service_name }}"
+    state: stopped
+  listen: restart snmpd
+
+- name: remove persistent data file
+  ansible.builtin.file:
+    path: /var/lib/snmp/snmpd.conf
+    state: absent
+  listen: restart snmpd
+
+- name: restart service
+  ansible.builtin.service:
+    name: "{{ snmpd_service_name }}"
     state: restarted
+  listen: restart snmpd
   when: service_default_state | default('started') == 'started'

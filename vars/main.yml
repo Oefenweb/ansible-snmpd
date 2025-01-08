@@ -4,3 +4,5 @@ snmpd_dependencies:
   - snmpd
   - snmp
   - snmp-mibs-downloader
+
+snmpd_service_name: snmpd
