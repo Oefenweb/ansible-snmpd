@@ -6,9 +6,9 @@
     filename: non-free
   with_items:
     - type: deb
-      url: "http://ftp.nl.debian.org/debian/ {{ ansible_distribution_release }}"
+      url: "http://ftp.nl.debian.org/debian/ {{ ansible_facts['distribution_release'] }}"
       component: contrib non-free
     - type: deb-src
-      url: "http://ftp.nl.debian.org/debian/ {{ ansible_distribution_release }}"
+      url: "http://ftp.nl.debian.org/debian/ {{ ansible_facts['distribution_release'] }}"
       component: contrib non-free
-  when: ansible_distribution == 'Debian'
+  when: ansible_facts['distribution'] == 'Debian'
